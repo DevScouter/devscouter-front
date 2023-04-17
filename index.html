@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Hello, world!</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="" />
-    <link rel="icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <title>Analyze GitHub User</title>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+    <label for="username">Enter GitHub Username:</label>
+    <input type="text" id="username">
+    <button id="submit">Analyze</button>
+    <div id="response"></div>
+    <script>
+        const usernameElement = document.getElementById('username');
+        const submitButton = document.getElementById('submit');
+        const responseElement = document.getElementById('response');
+
+        submitButton.addEventListener('click', () => {
+            const username = usernameElement.value;
+
+            fetch('https://devanalyzerback.onrender.com/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    responseElement.innerHTML = `
+          <p>Languages: ${data.languages}</p>
+          <p>Contributions: ${data.contributions}</p>
+          <p>Years Active: ${data.years_active}</p>
+        `;
+                })
+                .catch(error => {
+                    responseElement.innerHTML = `Error: ${error}`;
+                });
+        });
+    </script>
 </body>
 
 </html>
