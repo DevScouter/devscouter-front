@@ -6,7 +6,7 @@ form.addEventListener('submit', function (event) {
 
     var username = document.querySelector('#username').value;
     if (username == "") {
-        document.querySelector('#results').innerHTML = "<p>Username is empty</p>";
+        document.querySelector('#results').innerHTML = "<p>Error: Username is empty</p>";
         return;
     }
 
@@ -23,7 +23,8 @@ form.addEventListener('submit', function (event) {
 
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
-            document.querySelector('#results').innerHTML = "<p>Languages: " + response['languages'] + "</p>" +
+            document.querySelector('#results').innerHTML =
+                "<p>Languages: " + response['languages'] + "</p>" +
                 "<p>Contributions: " + response['contributions'] + "</p>" +
                 "<p>Years Active: " + response['years_active'] + "</p>";
         } else {
