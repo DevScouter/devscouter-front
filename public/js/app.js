@@ -1,4 +1,5 @@
 var form = document.querySelector('form');
+var body = document.querySelector('body');
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -12,11 +13,14 @@ form.addEventListener('submit', function (event) {
     var url = "https://devanalyzerback.onrender.com/api";
     var data = { 'username': username };
 
-    var xhr = new XMLHttpRequest();
+    body.classList.add('show-loading');
 
+    var xhr = new XMLHttpRequest();
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function () {
+        body.classList.remove('show-loading');
+
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             document.querySelector('#results').innerHTML = "<p>Languages: " + response['languages'] + "</p>" +

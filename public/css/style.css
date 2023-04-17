@@ -26,7 +26,6 @@ h1 {
     color: #333;
 }
 
-/* Style the form */
 form {
     background-color: #fff;
     padding: 20px;
@@ -90,4 +89,19 @@ button[type="submit"]:hover {
     #results {
         max-width: 90%;
     }
+}
+
+#loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loading img {
+    width: 50px;
+    height: 50px;
+}
+
+.show-loading #loading {
+    display: block;
 }
