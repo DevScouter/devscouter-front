@@ -12,6 +12,7 @@ form.addEventListener('submit', function (event) {
 
     var url = "https://devanalyzerback.onrender.com/api";
     var data = { 'username': username };
+    var repo_url = "https://github.com/" + username;
 
     body.classList.add('show-loading');
 
@@ -26,7 +27,8 @@ form.addEventListener('submit', function (event) {
             document.querySelector('#results').innerHTML =
                 "<p>Languages: " + response['languages'] + "</p>" +
                 "<p>Contributions: " + response['contributions'] + "</p>" +
-                "<p>Years Active: " + response['years_active'] + "</p>";
+                "<p>Years Active: " + response['years_active'] + "</p>" +
+                "<p> See Profile: <a href='" + repo_url + "'>" + repo_url + "</a></p>";
         } else {
             var error = JSON.parse(xhr.responseText).error;
             document.querySelector('#results').innerHTML = "<p>Error: " + error + "</p>";
