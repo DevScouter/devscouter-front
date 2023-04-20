@@ -25,9 +25,9 @@ form.addEventListener('submit', function (event) {
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             document.querySelector('#results').innerHTML =
-                "<p>Languages: " + response['languages'] + "</p>" +
-                "<p>Contributions: " + response['contributions'] + "</p>" +
-                "<p>Years Active: " + response['years_active'] + "</p>" +
+                "<p>" + response['languages'] + "</p>" +
+                "<p>" + response['contributions'] + "</p>" +
+                "<p>" + response['years_active'] + "</p>" +
                 "<p> See Profile: <a href='" + repo_url + "'>" + repo_url + "</a></p>";
         } else {
             var error = JSON.parse(xhr.responseText).error;
