@@ -6,7 +6,7 @@ form.addEventListener('submit', function (event) {
 
     var username = document.querySelector('#username').value;
     if (username == "") {
-        document.querySelector('#results').innerHTML = "<p>Error: Username is empty</p>";
+        alert("Please enter a username.")
         return;
     }
 
