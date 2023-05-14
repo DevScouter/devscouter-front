@@ -5,12 +5,18 @@ head
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Nunito&display=swap' rel='stylesheet')
   title Dev Scouter
-h1 Dev Scouter - Quick Dev Analyzer
+div
+  .lang-content 
+      a(href='#', class="korean-btn") Korean
+      br
+      a(href='#', class="english-btn") English
+h1#h1-text
 form
-  label(for='username') Enter Github Username:
+  label#label-text(for='username')
   input#username(type='text' name='username')
-  button#submit(type='submit') Analyze
+  button#submit(type='submit') 
 #results
 #loading
   img(src='/img/loading.gif' alt='Loading...')
 script(src='/js/index.js' crossorigin='anonymous')
+script(src='/js/translate.js' crossorigin='anonymous')
