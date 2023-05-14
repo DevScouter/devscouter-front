@@ -10,7 +10,7 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    var url = "https://devanalyzerback.onrender.com/api";
+    var url = "https://devlevel-server.onrender.com/api";
     var data = { 'username': username };
     var repo_url = "https://github.com/" + username;
 

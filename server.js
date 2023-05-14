@@ -5,11 +5,14 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "pug");
+app.set("views", __dirname + "/views");
+app.use(express.static(path.join(__dirname, "/public")));
+
 app.use(cors());
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '/index.html'));
+app.get("/", (req, res) => {
+    res.render("index");
 });
 
 app.listen(port);

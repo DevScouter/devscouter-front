@@ -1,0 +1,16 @@
+doctype html
+head
+  link(rel='stylesheet' type='text/css' href='/css/style.css')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Nunito&display=swap' rel='stylesheet')
+  title Github Dev Analyzer
+h1 Github Dev Analyzer
+form
+  label(for='username') Enter Github Username:
+  input#username(type='text' name='username')
+  button#submit(type='submit') Analyze
+#results
+#loading
+  img(src='/img/loading.gif' alt='Loading...')
+script(src='/js/app.js' crossorigin='anonymous')
