@@ -2,7 +2,8 @@
 
 Client for Devlevel
 
-<img width="946" alt="Screenshot 2023-04-30 at 1 33 48 AM" src="https://user-images.githubusercontent.com/104475739/235313520-eebcf9f3-d095-4db4-975e-465d8f1b21ac.png">
+<img width="922" alt="Screenshot 2023-05-14 at 8 57 59 PM" src="https://github.com/MontyCoder0701/devlevel-front/assets/104475739/941727a5-d553-4364-803c-b2ab2c2c58cd">
+
 
 ## Installation
 
