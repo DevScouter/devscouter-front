@@ -40,6 +40,7 @@ form.addEventListener('submit', function (event) {
                     <p> ${trans['activityText']}: ${response['years_active']} ${trans['yearsText']} </p>
                     <p> <a href= ${repo_url}> ${repo_url}</a></p>`;
             } else if (xhr.status === 404) {
+                <p> ${trans['serverText']} </p>
                 setTimeout(pollServer, 1000);
             } else {
                 var error = JSON.parse(xhr.responseText).error;

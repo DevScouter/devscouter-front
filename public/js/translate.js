@@ -14,6 +14,7 @@ const languages = {
         activityText: '활동기간',
         yearsText : '년',
         errorText : '어멋!',
+        serverText : '서버를 켜는 중입니다. 잠시만 기다려주세요.',
 
     },
     english: {
@@ -27,6 +28,7 @@ const languages = {
         activityText: 'Years Active',
         yearsText : 'year(s)',
         errorText : 'Oops!',
+        serverText : 'Server is starting up. Please wait a moment.',
     }
 };
 
