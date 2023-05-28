@@ -1,19 +1,22 @@
 // JS dynamic language change
 var form = document.querySelector('form');
 var body = document.querySelector('body');
-const language = localStorage.getItem('language');
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
+    var language = localStorage.getItem('language');
+    var trans = languages[language]
+
     var username = document.querySelector('#username').value;
     if (username == "") {
-        const labelText = languages[language]['labelText'];
+        const labelText = trans['labelText'];
         alert(labelText);
         return;
     }
 
     var url = "https://devlevel-server.onrender.com/api";
+    // var url = "http://localhost:5000/api";
     var data = { 'username': username };
     var repo_url = "https://github.com/" + username;
 
@@ -29,14 +32,18 @@ form.addEventListener('submit', function (event) {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
                 document.querySelector('#results').innerHTML =
-                    "<p>" + response['languages'] + "</p>" +
-                    "<p>" + response['contributions'] + "</p>" +
-                    "<p>" + response['years_active'] + "</p>" +
-                    "<p> See Profile: <a href='" + repo_url + "'>" + repo_url + "</a></p>";
+                    `
+                    <p> ${trans['stackText']}: ${response['stack']} </p>
+                    <p> ${trans['langText']}: ${response['languages']} </p>
+                    <p> ${trans['activeText']}: ${response['contributions']} </p>
+                    <p> ${trans['expertText']}: ${response['expertise']} </p>
+                    <p> ${trans['activityText']}: ${response['years_active']} ${trans['yearsText']} </p>
+                    <p> <a href= ${repo_url}> ${repo_url}</a></p>`;
+            } else if (xhr.status === 404) {
+                setTimeout(pollServer, 1000);
             } else {
                 var error = JSON.parse(xhr.responseText).error;
-                document.querySelector('#results').innerHTML = "<p>Oops, " + error + "</p>";
-                setTimeout(pollServer, 1000);
+                document.querySelector('#results').innerHTML = `<p>${trans['errorText']} ${error}</p>`;
             }
         };
         xhr.send(JSON.stringify(data));
