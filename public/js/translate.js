@@ -1,3 +1,4 @@
+// Pug file language change
 const koreanButton = document.querySelector('.korean-btn');
 const englishButton = document.querySelector('.english-btn');
 

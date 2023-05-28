@@ -1,3 +1,4 @@
+// JS dynamic language change
 var form = document.querySelector('form');
 var body = document.querySelector('body');
 
@@ -6,7 +7,11 @@ form.addEventListener('submit', function (event) {
 
     var username = document.querySelector('#username').value;
     if (username == "") {
-        alert("Please enter a username.")
+        if (localStorage.getItem('language') == 'korean') {
+            alert("GitHub 아이디를 입력하세요.")
+        } else {
+            alert("Please enter a Github username.")
+        }
         return;
     }
 
