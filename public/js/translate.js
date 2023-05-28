@@ -13,7 +13,7 @@ const languages = {
         expertText: '전문성',
         activityText: '활동기간',
         yearsText : '년',
-        errorText : '어멋!',
+        errorText : '어멋! 유저를 찾을 수 없습니다.',
         serverText : '서버를 켜는 중입니다. 잠시만 기다려주세요.',
 
     },
@@ -27,7 +27,7 @@ const languages = {
         expertText: 'Expertise',
         activityText: 'Years Active',
         yearsText : 'year(s)',
-        errorText : 'Oops!',
+        errorText : 'Oops! User not found.',
         serverText : 'Server is starting up. Please wait a moment.',
     }
 };

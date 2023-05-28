@@ -15,8 +15,8 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    var url = "https://devlevel-server.onrender.com/api";
-    // var url = "http://localhost:5000/api";
+    // var url = "https://devlevel-server.onrender.com/api";
+    var url = "http://localhost:5000/api";
     var data = { 'username': username };
     var repo_url = "https://github.com/" + username;
 
@@ -39,15 +39,20 @@ form.addEventListener('submit', function (event) {
                     <p> ${trans['expertText']}: ${response['expertise']} </p>
                     <p> ${trans['activityText']}: ${response['years_active']} ${trans['yearsText']} </p>
                     <p> <a href= ${repo_url}> ${repo_url}</a></p>`;
-            } else if (xhr.status === 404) {
-                <p> ${trans['serverText']} </p>
-                setTimeout(pollServer, 1000);
-            } else {
-                var error = JSON.parse(xhr.responseText).error;
-                document.querySelector('#results').innerHTML = `<p>${trans['errorText']} ${error}</p>`;
+            } 
+
+            if (xhr.status === 400) {
+               ` <p> ${trans['errorText']} </p>`
             }
         };
+
+        xhr.onerror = function () {
+            document.querySelector('#results').innerHTML = `<p>${trans['serverText']}</p>`;
+            setTimeout(pollServer, 1000);
+        };
+
         xhr.send(JSON.stringify(data));
+        
     };
 
     pollServer();
