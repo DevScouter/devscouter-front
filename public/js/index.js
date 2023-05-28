@@ -1,17 +1,15 @@
 // JS dynamic language change
 var form = document.querySelector('form');
 var body = document.querySelector('body');
+const language = localStorage.getItem('language');
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     var username = document.querySelector('#username').value;
     if (username == "") {
-        if (localStorage.getItem('language') == 'korean') {
-            alert("GitHub 아이디를 입력하세요.")
-        } else {
-            alert("Please enter a Github username.")
-        }
+        const labelText = languages[language]['labelText'];
+        alert(labelText);
         return;
     }
 
@@ -36,7 +34,7 @@ form.addEventListener('submit', function (event) {
                 "<p> See Profile: <a href='" + repo_url + "'>" + repo_url + "</a></p>";
         } else {
             var error = JSON.parse(xhr.responseText).error;
-            document.querySelector('#results').innerHTML = "<p>Error: " + error + "</p>";
+            document.querySelector('#results').innerHTML = "<p>Oops, " + error + "</p>";
         }
     };
 
