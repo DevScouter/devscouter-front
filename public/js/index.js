@@ -42,7 +42,8 @@ form.addEventListener('submit', function (event) {
             } 
 
             if (xhr.status === 400) {
-               ` <p> ${trans['errorText']} </p>`
+                document.querySelector('#results').innerHTML =
+               ` <p> ${trans['errorText']} </p>`;
             }
         };
 
