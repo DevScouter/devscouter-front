@@ -15,7 +15,16 @@ const languages = {
         yearsText : '년',
         errorText : '어멋! 유저를 찾을 수 없습니다.',
         serverText : '서버를 켜는 중입니다. 잠시만 기다려주세요.',
-
+        Backend: '백엔드',
+        Frontend: '프론트엔드',
+        Fullstack: '풀스택',
+        Ghost: '유령회원',
+        Low: '낮음',
+        Medium: '중간',
+        High: '높음',
+        Newbie: '초보',
+        Junior: '주니어',
+        Senior: '시니어',
     },
     english: {
         h1Text: 'Dev Scouter - Quick Dev Analyzer',
@@ -48,12 +57,18 @@ koreanButton.addEventListener('click', (event) => {
     event.preventDefault();
     updateContent('korean');
     localStorage.setItem('language', 'korean');
+
+    koreanButton.classList.add('active');
+    englishButton.classList.remove('active');
 });
 
 englishButton.addEventListener('click', (event) => {
     event.preventDefault();
     updateContent('english');
     localStorage.setItem('language', 'english');
+
+    koreanButton.classList.remove('active');
+    englishButton.classList.add('active');
 });
 
 if (localStorage.getItem('language') === null) {

@@ -2,13 +2,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #f8f8f8;
+}
+
+body {
+    background-color: #f4f4f4;
 }
 
 h1,
@@ -105,4 +105,44 @@ button[type="submit"]:hover {
 
 .show-loading #loading {
     display: block;
+}
+
+.korean-btn {
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.korean-btn.active {
+    background-color: #626262;
+}
+
+.english-btn {
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.english-btn.active {
+    background-color: #626262;
 }
