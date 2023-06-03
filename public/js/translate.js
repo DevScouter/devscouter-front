@@ -13,7 +13,7 @@ const languages = {
         expertText: '전문성',
         activityText: '활동기간',
         yearsText : '년',
-        errorText : '어멋! 유저를 찾을 수 없습니다.',
+        errorText : '어멋! 유저를 찾을 수 없습니다. 스펠링이 맞나요?',
         serverText : '서버를 켜는 중입니다. 잠시만 기다려주세요.',
         Backend: '백엔드',
         Frontend: '프론트엔드',
@@ -36,7 +36,7 @@ const languages = {
         expertText: 'Expertise',
         activityText: 'Years Active',
         yearsText : 'year(s)',
-        errorText : 'Oops! User not found.',
+        errorText : 'Oops! User not found. Is your spelling correct?',
         serverText : 'Server is starting up. Please wait a moment.',
     }
 };
