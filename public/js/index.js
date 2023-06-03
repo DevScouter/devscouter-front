@@ -45,11 +45,11 @@ form.addEventListener('submit', function (event) {
                 document.querySelector('#results').innerHTML =
                ` <p> ${trans['errorText']} </p>`;
             }
-        };
 
-        xhr.onerror = function () {
-            document.querySelector('#results').innerHTML = `<p>${trans['serverText']}</p>`;
-            setTimeout(pollServer, 1000);
+            if (xhr.status === 404) {
+                document.querySelector('#results').innerHTML =
+               ` <p> ${trans['serverText']} </p>`;
+            }
         };
 
         xhr.send(JSON.stringify(data));
