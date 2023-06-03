@@ -1,8 +1,7 @@
 # Dev Scouter Client
 
 Client for Dev Scouter
-
-<img width="753" alt="Screenshot 2023-05-14 at 9 15 38 PM" src="https://github.com/DevScouter/devscouter-front/assets/104475739/990cadfa-7d3e-4b74-bf0a-81a87d49d79a">
+<img width="753" alt="Screenshot 2023-06-03 at 10 43 57 PM" src="https://github.com/DevScouter/devscouter-front/assets/104475739/fe3b3127-36b3-4ce7-aa2f-9f3252ed4b3e">
 
 ## Installation
 
