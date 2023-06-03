@@ -27,6 +27,7 @@ form.addEventListener('submit', function (event) {
         xhr.open('POST', url);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
+            clearTimeout(timeoutId); 
             body.classList.remove('show-loading');
 
             if (xhr.status === 200) {
@@ -78,6 +79,10 @@ form.addEventListener('submit', function (event) {
             document.querySelector('#results').innerHTML = `<p>${trans['serverText']}</p>`;
             setTimeout(pollServer, 1000);
         };
+
+        var timeoutId = setTimeout(function () {
+            document.querySelector('#results').innerHTML = `<p> ${trans['serverText']} </p>`;
+        }, 5000);
 
         xhr.send(JSON.stringify(data));
         
