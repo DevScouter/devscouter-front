@@ -4,7 +4,7 @@ const englishButton = document.querySelector('.english-btn');
 
 const languages = {
     korean: {
-        h1Text: 'Dev Scouter - 개발자 분석 프로그램',
+        h1Text: 'Dev Scouter - 한눈에 보는 개발자',
         labelText: 'GitHub 아이디를 입력하세요',
         submitText: '분석하기',
         stackText: '기술스택',
