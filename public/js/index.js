@@ -74,6 +74,11 @@ form.addEventListener('submit', function (event) {
             }
         };
 
+         xhr.onerror = function () {
+            document.querySelector('#results').innerHTML = `<p>${trans['serverText']}</p>`;
+            setTimeout(pollServer, 1000);
+        };
+
         xhr.send(JSON.stringify(data));
         
     };
