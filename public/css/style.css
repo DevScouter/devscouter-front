@@ -121,6 +121,8 @@ button[type="submit"]:hover {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 1;
+    position: absolute;
 }
 
 .korean-btn.active {
@@ -131,7 +133,6 @@ button[type="submit"]:hover {
     text-decoration: none;
     display: inline-block;
     margin-left: 10px;
-    margin-top: 10px;
     padding: 5px 10px;
     font-size: 15px;
     font-weight: bold;
@@ -141,6 +142,8 @@ button[type="submit"]:hover {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 1;
+    position: absolute;
 }
 
 .english-btn.active {
