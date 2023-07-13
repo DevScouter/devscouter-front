@@ -1,5 +1,5 @@
 // JS dynamic language change
-var form = document.querySelector('form');
+var form = document.getElementById('username-form');
 var body = document.querySelector('body');
 
 form.addEventListener('submit', function (event) {
