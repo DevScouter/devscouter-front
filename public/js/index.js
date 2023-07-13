@@ -49,9 +49,9 @@ form.addEventListener('submit', function (event) {
                 let { stack, contributions: contrib, expertise } = response;
 
                 if (language === 'korean') {
-                  stack = koreanMap[stack] || stack;
-                  contrib = koreanMap[contrib] || contrib;
-                  expertise = koreanMap[expertise] || expertise;
+                    stack = koreanMap[stack] || stack;
+                    contrib = koreanMap[contrib] || contrib;
+                    expertise = koreanMap[expertise] || expertise;
                 }
 
                 document.querySelector('#results').innerHTML =
@@ -66,16 +66,16 @@ form.addEventListener('submit', function (event) {
 
             if (xhr.status === 400) {
                 document.querySelector('#results').innerHTML =
-               ` <p> ${trans['errorText']} </p>`;
+                ` <p> ${trans['errorText']} </p>`;
             }
 
             if (xhr.status === 404) {
                 document.querySelector('#results').innerHTML =
-               ` <p> ${trans['serverText']} </p>`;
+                ` <p> ${trans['serverText']} </p>`;
             }
         };
 
-         xhr.onerror = function () {
+        xhr.onerror = function () {
             document.querySelector('#results').innerHTML = `<p>${trans['serverText']}</p>`;
             setTimeout(pollServer, 1000);
         };
