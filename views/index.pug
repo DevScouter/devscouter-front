@@ -15,10 +15,14 @@ div
 h1#h1-text
 form#year-form
   label Years of Experience
-  input#start-year(type='date' name='start-year' placeholder='Start Year') 
-  input#end-year(type='date' name='end-year' placeholder='End Year')
+  input#start-year(class='start-year' type='date' name='start-year') 
+  input#end-year(class='end-year' type='date' name='end-year')
+  button#add-year(type='button') Add
+  div#year-fields-container
   br
   span#result-year
+  br
+  span#total-year
   button#year-submit(type='submit') 
 form#username-form
   label#label-text(for='username')
