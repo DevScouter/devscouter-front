@@ -151,3 +151,7 @@ button[type="submit"]:hover {
 .english-btn.active {
     background-color: #38598b;
 }
+
+#start-year {
+    margin-right: 10px;
+}

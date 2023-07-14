@@ -13,12 +13,20 @@ div
       br
       a(href='#', class="english-btn") English
 h1#h1-text
-form
+form#year-form
+  label Years of Experience
+  input#start-year(type='date' name='start-year' placeholder='Start Year') 
+  input#end-year(type='date' name='end-year' placeholder='End Year')
+  br
+  span#result-year
+  button#year-submit(type='submit') 
+form#username-form
   label#label-text(for='username')
   input#username(type='text' name='username')
-  button#submit(type='submit') 
+  button#username-submit(type='submit') 
 #results
 #loading
   img(src='/img/loading.gif' alt='Loading...')
 script(src='/js/translate.js' crossorigin='anonymous')
+script(src='/js/year_calc.js' crossorigin='anonymous')
 script(src='/js/index.js' crossorigin='anonymous')
