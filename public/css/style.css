@@ -42,7 +42,7 @@ label {
     color: #113f67;
 }
 
-input[type="text"] {
+#username {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -157,9 +157,16 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
+.end-year {
+    width: 170px;
+    padding-left: 10px;
+}
+
 .start-year {
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 170px;
+    padding-left: 10px;
 }
 
 #add-year {
