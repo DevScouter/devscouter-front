@@ -6,7 +6,8 @@ const languages = {
     korean: {
         h1Text: 'Dev Scouter - 한눈에 보는 개발자',
         labelText: 'GitHub 아이디를 입력하세요',
-        submitText: '분석하기',
+        usSubmitText: '분석하기',
+        yrSubmitText: '계산하기',
         stackText: '기술스택',
         langText: '전문 언어',
         activeText: '깃허브 활동정도',
@@ -29,7 +30,8 @@ const languages = {
     english: {
         h1Text: 'Dev Scouter - Quick Dev Analyzer',
         labelText: 'Enter GitHub Username',
-        submitText: 'Analyze',
+        usSubmitText: 'Analyze',
+        yrSubmitText: 'Calculate',
         stackText: 'Tech Stack',
         langText: 'Expert Languages',
         activeText: 'GitHub Activity',
@@ -45,12 +47,14 @@ function updateContent(language) {
     const {
         h1Text,
         labelText,
-        submitText,
+        usSubmitText,
+        yrSubmitText,
     } = languages[language];
 
     document.getElementById('h1-text').innerHTML = h1Text;
     document.getElementById('label-text').innerHTML = labelText;
-    document.getElementById('submit').innerHTML = submitText;
+    document.getElementById('username-submit').innerHTML = usSubmitText;
+    document.getElementById('year-submit').innerHTML = yrSubmitText;
 }
 
 koreanButton.addEventListener('click', (event) => {

@@ -17,11 +17,13 @@ form#year-form
   label Years of Experience
   input#start-year(type='date' name='start-year' placeholder='Start Year') 
   input#end-year(type='date' name='end-year' placeholder='End Year')
-  button#submit(type='submit') 
+  br
+  span#result-year
+  button#year-submit(type='submit') 
 form#username-form
   label#label-text(for='username')
   input#username(type='text' name='username')
-  button#submit(type='submit') 
+  button#username-submit(type='submit') 
 #results
 #loading
   img(src='/img/loading.gif' alt='Loading...')

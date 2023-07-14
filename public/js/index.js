@@ -1,8 +1,8 @@
 // JS dynamic language change
-var form = document.getElementById('username-form');
-var body = document.querySelector('body');
+var username_form = document.getElementById('username-form');
+var username_body = document.querySelector('body');
 
-form.addEventListener('submit', function (event) {
+username_form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     var language = localStorage.getItem('language');
@@ -20,7 +20,7 @@ form.addEventListener('submit', function (event) {
     var data = { 'username': username };
     var repo_url = "https://github.com/" + username;
 
-    body.classList.add('show-loading');
+    username_body.classList.add('show-loading');
 
     function pollServer() {
         var xhr = new XMLHttpRequest();
@@ -28,7 +28,7 @@ form.addEventListener('submit', function (event) {
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function () {
             clearTimeout(timeoutId); 
-            body.classList.remove('show-loading');
+            username_body.classList.remove('show-loading');
 
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
